@@ -35,7 +35,7 @@ internal class Program
         {
             var submission = submissions.First(x => x.Id == campaignEntity.Id);
 
-            campaignEntity.Metadata = new CampaignMetadata
+            campaignEntity.Metadata = new CampaignMetadataEntity
             {
                 Id = submission.Metadata.Id,
                 Genre = submission.Metadata.Genre,

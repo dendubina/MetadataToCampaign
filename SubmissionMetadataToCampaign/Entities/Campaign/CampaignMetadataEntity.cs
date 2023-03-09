@@ -2,7 +2,7 @@
 
 namespace SubmissionMetadataToCampaign.Entities.Campaign;
 
-public class CampaignMetadata
+public class CampaignMetadataEntity
 {
     [Key]
     public Guid? Id { get; set; }

@@ -27,7 +27,11 @@ internal class CampaignDbContext : DbContext
         modelBuilder.Entity<CampaignEntity>().Property(x => x.Status).HasColumnName("status");
         modelBuilder.Entity<CampaignEntity>().Property(x => x.Id).HasColumnName("campaign_id");
         modelBuilder.Entity<CampaignEntity>().Property(x => x.CreationDate).HasColumnName("creation_date");
-        modelBuilder.Entity<CampaignEntity>().Property(t => t.Metadata).HasColumnName("metadata").HasColumnType("jsonb");
-            
+        modelBuilder.Entity<CampaignEntity>().Property(t => t.Metadata).HasColumnName("metadata")
+            .HasConversion(
+                v => JsonConvert.SerializeObject(v,
+                    new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }),
+                v => JsonConvert.DeserializeObject<CampaignMetadataEntity>(v,
+                    new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }));
     }
 }

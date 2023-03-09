@@ -11,6 +11,6 @@ public class CampaignEntity
     public Guid ClientId { get; set; }
     public int Status { get; set; }
     public DateTime CreationDate { get; set; }
-    public CampaignMetadata? Metadata { get; set; }
+    public CampaignMetadataEntity? Metadata { get; set; }
     public ClientEntity Client { get; set; }
 }
