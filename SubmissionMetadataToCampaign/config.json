@@ -1,0 +1,6 @@
+﻿{
+   "ConnectionStrings": {
+    "Campaign": "Host=127.0.0.1;Port=5432;Database=ampligo-develop-campaign;Username=user;Password=mysecretpassword",
+    "Submission": "Host=127.0.0.1;Port=5432;Database=ampligo-develop-submission;Username=user;Password=mysecretpassword"
+  }
+}
